@@ -1,8 +1,8 @@
 # CalculatorKt
-Basic calculator application written in Kotliמ implementing MVC pattern.
-soon ill be updating sientific calculations features in ladscape device mode (when rotating). 
+Basic calculator application written in Kotlin implementing MVC pattern.
+soon ill be posting sientific calculations features in landscape device mode (when rotating). 
 still need to handle the +/- operator to prefom a task.
-App using the Expression dependencies * implementation 'net.objecthunter:exp4j:$version' *
+App using the Expression library : dependencies * implementation 'net.objecthunter:exp4j:$version' *
 to preform any Arithmetic calculations.
 
 
