@@ -1,7 +1,7 @@
 # CalculatorKt
 Basic calculator application written in Kotlin implementing MVC pattern.
 soon ill be posting scientific calculations features in landscape device mode (when rotating). 
-still need to handle the +/- operator to prefom a task.
+still need to handle the +/- operator to prefom a task , and replacing Int result with BigDecimal element.
 App using the Expression library : dependencies * implementation 'net.objecthunter:exp4j:$version' *
 to preform any Arithmetic calculations.
 
