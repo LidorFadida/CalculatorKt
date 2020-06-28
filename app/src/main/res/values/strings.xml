@@ -3,6 +3,7 @@
     <string name="error">Error Division By Zero</string>
     <string name="inCompleteExpression">In-Complete expression String (operator is last/error is accorded)</string>
     <string name="ac">AC</string>
+    <string name="c">"C"</string>
     <string name="percent">%</string>
     <string name="equal">=</string>
     <string name="plus">+</string>

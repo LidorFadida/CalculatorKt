@@ -3,6 +3,7 @@ package com.lidor.calculatorkt.model
 
 import android.content.Context
 import com.lidor.calculatorkt.R
+import com.lidor.calculatorkt.utils.isDig
 import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
 import kotlin.math.ceil
@@ -24,10 +25,13 @@ import kotlin.math.floor
  */
 class Calculator(private val context: Context) {
 
+    private val tag: String = "TAG"
     private var expressionString: StringBuilder = StringBuilder()
     private var stateError: Boolean = false
-    private var lastDig: Boolean = false
+    private var lastDig: Boolean = true
     private var lastDot: Boolean = false
+    private val size: Int
+        get() = expressionString.length
 
     /**
      * concatenate a [Number] to the [expressionString].
@@ -74,7 +78,7 @@ class Calculator(private val context: Context) {
      * clearing the @param [expressionString] and resetting the @param [lastDig] , @param [stateError] , @param [lastDot].
      * @return [String] value = [R.string.zero] using the @param [context].
      */
-    fun refreshExpression(): String {
+    private fun refreshExpression(): String {
         this.expressionString.clear()
         this.lastDig = true
         this.stateError = false
@@ -141,5 +145,24 @@ class Calculator(private val context: Context) {
                     true
                 )
         ).build()
+    }
+
+    fun clearLastOperation(): String {
+        this.lastDig = if (!this.lastDig) {
+            this.expressionString.setLength(this.size - 1)
+            true
+        } else {
+            for (c in this.size - 1 downTo 0) {
+                if (!isDig(this.expressionString[c]))
+                    break
+                else
+                    this.expressionString.setLength(this.size - 1)
+            }
+            false
+        }
+        return if (this.expressionString.isEmpty())
+            this.refreshExpression()
+        else
+            this.expressionString.toString()
     }
 }

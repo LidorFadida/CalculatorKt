@@ -136,10 +136,12 @@
         android:layout_height="0dp"
         android:layout_margin="0dp"
         android:gravity="bottom"
+        android:letterSpacing="0.1"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:textColor="@color/btnTextColor"
         android:textSize="40sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,6 +153,7 @@
         android:layout_height="0dp"
         android:layout_margin="0dp"
         android:gravity="bottom"
+        android:letterSpacing="0.1"
         android:lineSpacingExtra="20dp"
         android:lineSpacingMultiplier="3.5"
         android:paddingLeft="5dp"
@@ -158,6 +161,7 @@
         android:text="@string/zero"
         android:textColor="@color/btnTextColor"
         android:textSize="40sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -165,7 +169,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <Button
-        android:id="@+id/clear"
+        android:id="@+id/btn_clear"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="0dp"

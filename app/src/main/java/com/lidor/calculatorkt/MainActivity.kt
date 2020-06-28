@@ -17,9 +17,9 @@ import net.objecthunter.exp4j.Expression
  * @property calculator the model element responsible the Math operations.
  * @property result a [TextView] filed in the UI containing the last calculated result.
  * @property expression a [TextView] filed in the UI containing the concatenated [Expression].
- * @author Lidor Fadida
+ * @author LidorFadida
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
     private val calculator: Calculator = Calculator(this)
     private lateinit var result: TextView
     private lateinit var expression:TextView
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         this.expression = findViewById(R.id.expression)
     }
 
-    ///From here to below all functions updating the views according to the controller element///
+    ///From here and below all functions updating the views according to the controller element///
 
     fun onDigitClicked(view: View) {
         this.expression.text = calculator.appendDigit(view.tag.toString())
@@ -53,8 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClearClicked(view: View) {
-        this.expression.text = calculator.refreshExpression()
-        this.result.text = null
+        this.expression.text = calculator.clearLastOperation()
     }
 
     fun onEqualClicked(view: View) {
